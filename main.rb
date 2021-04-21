@@ -1,11 +1,12 @@
-require_relative 'lib/console_interface'
-require_relative 'lib/game'
+require_relative "lib/console_interface"
+require_relative "lib/game"
 
 # 1. Поздороваться
 puts "Всем привет!"
 
 # 2. Загрузить случайное слово из файла
 word = File.readlines("#{__dir__}/data/words.txt", encoding: 'UTF-8', chomp: true).sample
+
 game = Game.new(word)
 console_interface = ConsoleInterface.new(game)
 
